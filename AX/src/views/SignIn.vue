@@ -27,9 +27,7 @@
           src="@/assets/ax.svg"
           @click="f_router_to('home')"
         />
-        <h2
-          class="text--color mt-6 text-center text-3xl font-bold tracking-tight leading-10"
-        >
+        <h2 class="text--color mt-6 text-center text-3xl font-bold tracking-tight leading-10">
           Sign in to your account
         </h2>
         <p
@@ -44,21 +42,22 @@
         action="#"
         class="mx-auto mt-4 w-96 space-y-6"
         data-test="account_form"
+        @submit.prevent="f_api_signIn"
       >
         <div>
           <div>
-            <label class="font-bold text--color" for="email-address">
-              Email address
-            </label>
+            <label class="font-bold text--color" for="email-address"> Email address </label>
             <input
               id="email-address"
               v-model="account.email"
+              :class="{ err: is_err.email }"
               autocomplete="email"
               class="input"
               data-test="account_email"
               name="email"
               required
               type="email"
+              @blur="check_account"
             />
           </div>
           <div>
@@ -66,12 +65,14 @@
             <input
               id="password"
               v-model="account.pwd"
+              :class="{ err: is_err.pwd }"
               autocomplete="current-password"
               class="input"
               data-test="account_pwd"
               name="password"
               required
               type="password"
+              @blur="check_account"
             />
           </div>
         </div>
@@ -103,8 +104,7 @@
           <button
             class="hover:text-blue-600 group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-blue-500"
             data-test="button_signIn"
-            type="button"
-            @click="f_api_signIn"
+            type="submit"
           >
             <span class="absolute inset-y-0 left-0 flex items-center pl-3">
               <LockClosedIcon
@@ -121,33 +121,68 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
+import type { Ref } from "vue";
+import { ref, unref } from "vue";
 import { LockClosedIcon } from "@heroicons/vue/20/solid";
 import { useRouter } from "vue-router";
-
-const emit = defineEmits<{ (e: "submit", value: object): void }>();
+//!test
+const emit = defineEmits<{ (e: "test", value: object): void }>();
 //*路由
 const router = useRouter();
+
 function f_router_to(to: string) {
   router.push({ name: to });
 }
+
+interface iface_Account {
+  email: string;
+  pwd: string;
+}
+
 //account信息
-const account = ref<{ email: string; pwd: string }>({
+const account = ref<iface_Account>({
   email: "",
   pwd: "",
 });
-emit("submit", account.value);
+//验证
+const is_err: Ref<{ email: boolean; pwd: boolean }> = ref({
+  email: false,
+  pwd: false,
+});
+//input事件
+type k = keyof iface_Account;
+
+function trim_space() {
+  for (const argumentsKey in account.value) {
+    unref(account)[argumentsKey as k] = unref(account)[argumentsKey as k].replace(/\s/g, "");
+  }
+}
+
+//blur事件
+function check_account() {
+  (account.value.email as string).length <= 6
+    ? (is_err.value.email = true)
+    : (is_err.value.email = false);
+}
+
 //post请求
 function f_api_signIn() {
   console.log(account.value);
+  trim_space();
+  emit("test", account.value);
 }
 </script>
 
 <style lang="scss" scoped>
+.err {
+  box-shadow: 0 0 0 2px red;
+}
+
+//*input的文字颜色
 .input {
-  //*input的文字颜色
   -webkit-text-fill-color: #273681;
-  @apply mt-1 mb-6 bg-transparent  relative block w-full appearance-none rounded-md border border-indigo-500 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-800 focus:outline-none focus:ring-indigo-500 sm:text-sm;
+  @apply mt-1 mb-6 bg-transparent relative block w-full appearance-none rounded-md border border-indigo-500 px-3 py-2
+  text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-800 focus:outline-none focus:ring-indigo-500 sm:text-sm;
 }
 
 //*input的自动填充
@@ -159,38 +194,39 @@ function f_api_signIn() {
 .text--color {
   color: transparent;
   -webkit-background-clip: text;
-  background-image: linear-gradient(
-    to right,
-    #533fb5,
-    #463ea8,
-    #3a3c9c,
-    #30398e,
-    #273681
-  );
+  background-image: linear-gradient(to right, #533fb5, #463ea8, #3a3c9c, #30398e, #273681);
 }
+
 .border--hover {
   @apply px-2 rounded-md border border-transparent hover:border-blue-600;
 }
+
 //*sign up的颜色渐变动画
 .color--autoChange {
   animation: colorAnim 3s linear 0s infinite alternate-reverse;
 }
+
 @keyframes colorAnim {
   0% {
     color: #5ae2e1;
   }
+
   20% {
     color: #2bb5e3;
   }
+
   40% {
     color: #3d95da;
   }
+
   60% {
     color: #4f73d0;
   }
+
   80% {
     color: #4f59d3;
   }
+
   100% {
     color: #5d3ccf;
   }

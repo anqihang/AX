@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e17d57d-a0fc-457e-8d30-32d09ef8277b" name="变更" comment="" />
+    <list default="true" id="7e17d57d-a0fc-457e-8d30-32d09ef8277b" name="变更" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AX/.eslintrc.cjs" beforeDir="false" afterPath="$PROJECT_DIR$/AX/.eslintrc.cjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AX/.prettierrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/AX/.prettierrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AX/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/AX/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AX/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/AX/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AX/src/views/SignIn.vue" beforeDir="false" afterPath="$PROJECT_DIR$/AX/src/views/SignIn.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AX/src/views/__tests__/sign.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/AX/src/views/__tests__/sign.test.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,7 +58,7 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;D:\\AX\\AX\\node_modules\\prettier&quot;,
     &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
     &quot;ts.external.directory.path&quot;: &quot;D:\\AX\\AX\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -123,7 +132,9 @@
       <workItem from="1676956696679" duration="15968000" />
       <workItem from="1677047439096" duration="4161000" />
       <workItem from="1677057376483" duration="11542000" />
-      <workItem from="1677122775277" duration="11251000" />
+      <workItem from="1677122775277" duration="23992000" />
+      <workItem from="1677164764150" duration="1131000" />
+      <workItem from="1677165952809" duration="194000" />
     </task>
     <servers />
   </component>
