@@ -11,6 +11,25 @@
 h1,h2,h3,h4,h5,h6,p,a,label{
     user-select: none;
 }
+/** vue
+ * 淡入淡出 fade
+ */
+.fade-enter-from {
+    opacity: 0;
+}
+.fade-enter-active {
+    transition: opacity 0.5s ease;
+}
+.fade-enter-to {
+}
+.fade-leave-from {
+}
+.fade-leave-active {
+    transition: opacity 0.5s ease;
+}
+.fade-leave-to {
+    opacity: 0;
+}
 /*#app {*/
 /*    !*max-width: 1280px;*!*/
 /*    !*margin: 0 auto;*!*/

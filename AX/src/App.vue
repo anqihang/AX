@@ -26,27 +26,10 @@ provide(pi_name, "ax");
         );
       "
     >
-      <transition mode="out-in" name="home">
+      <transition mode="out-in" name="fade">
         <component :is="Component"></component>
       </transition>
     </div>
   </RouterView>
 </template>
-<style lang="scss" scoped>
-.home-enter-from {
-  opacity: 0;
-}
-.home-enter-active {
-  transition: opacity 0.5s ease;
-}
-.home-enter-to {
-}
-.home-leave-from {
-}
-.home-leave-active {
-  transition: opacity 0.5s ease;
-}
-.home-leave-to {
-  opacity: 0;
-}
-</style>
+<style lang="scss" scoped></style>

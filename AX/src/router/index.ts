@@ -1,4 +1,6 @@
+import type { NavigationGuardNext, RouteLocationNormalized } from "vue-router";
 import { createRouter, createWebHistory } from "vue-router";
+import { getToken } from "@/utils/token";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -18,15 +20,23 @@ const router = createRouter({
       path: "/signUp",
       component: () => import("@/views/SignUp.vue"),
     },
-    // {
-    //   path: '/about',
-    //   name: 'about',
-    //   // route level code-splitting
-    //   // this generates a separate chunk (About.[hash].js) for this route
-    //   // which is lazy-loaded when the route is visited.
-    //   component: () => import('../views/AboutView.vue')
-    // }
   ],
 });
 
 export default router;
+
+//!
+router.beforeEach(async (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
+  if (getToken()) {
+    switch (to.name) {
+      case "signIn":
+        next({ name: "home" });
+        break;
+      default:
+        next();
+        break;
+    }
+  } else {
+    next();
+  }
+});

@@ -10,10 +10,9 @@ describe("signIn Component", () => {
     // const input_email = wrapper.find('[data-test="account_email"]');
     // await input_email.setValue("anqihang");
     //?
-    await wrapper
-      .get('[data-test="account_email"]')
-      .setValue("1711404616@qq.com");
+    await wrapper.get('[data-test="account_email"]').setValue("1711404616@qq.com");
     await wrapper.get('[data-test="account_pwd"]').setValue("ANqihang2000.");
+    await wrapper.get('[data-test="checkbox-remember"]').setValue(true);
     //!触发事件
     // await wrapper.get('[data-test="account_form"]').trigger("submit");
     // await wrapper.get('[data-test="button_signIn"]').trigger("click");
@@ -28,6 +27,7 @@ describe("signIn Component", () => {
       {
         email: "1711404616@qq.com",
         pwd: "ANqihang2000.",
+        rememberMe: true,
       },
     ]);
   });
