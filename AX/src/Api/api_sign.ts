@@ -17,7 +17,7 @@ export const axios_signIn = function (account: Partial<interf_Account>): AxiosPr
 //注册
 export const axios_signUp = function (account: Partial<interf_Account>): AxiosPromise {
   return instance({
-    url: "",
+    url: "/logup",
     method: "POST",
     data: {
       email: account.email,

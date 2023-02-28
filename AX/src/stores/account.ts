@@ -1,26 +1,37 @@
 import { defineStore } from "pinia";
 import type { interf_Account } from "@/views/types/type_signIn.";
-import { axios_signIn } from "@/Api/api_sign";
+import { axios_signIn, axios_signUp } from "@/Api/api_sign";
 import { getToken, removeToken, setToken } from "@/utils/token";
 import { ref } from "vue";
 
 export const useAccountStore = defineStore("account", () => {
+  /*注册*/
+  function signUp(_account: Partial<interf_Account>) {
+    return new Promise((resolve, inject) => {
+      axios_signUp(_account)
+        .then((res) => {
+          resolve(true);
+        })
+        .catch((err: Error) => {
+          inject(err);
+        });
+    });
+  }
   //token
   const token = ref<string | null>(getToken() || null);
   /*登录*/
   function signIn(_account: Partial<interf_Account>) {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve, inject) => {
       axios_signIn(_account)
         .then((res) => {
           //保存token到localStorage
-          console.log(res);
           setToken(res.data.token);
           //将token保存在store
           token.value = res.data.token;
           resolve(true);
         })
         .catch((err: Error) => {
-          reject(err);
+          inject(err);
         });
     });
   }
@@ -32,5 +43,5 @@ export const useAccountStore = defineStore("account", () => {
     removeToken();
     token.value = "";
   }
-  return { token, signIn, signOut };
+  return { token, signUp, signIn, signOut };
 });

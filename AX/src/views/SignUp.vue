@@ -21,7 +21,7 @@
   >
     <div class="max-w-4xl mx-auto">
       <div>
-        <img alt="logo" class="border--hover h-12 mx-auto w-auto cursor-pointer" src="@/assets/ax.svg" />
+        <img alt="logo" class="border--hover h-12 mx-auto w-auto cursor-pointer" src="@/assets/ax.svg" @click="f_router_to('home')" />
         <h2 class="text--color mt-6 text-center text-3xl font-bold tracking-tight leading-10">注 册</h2>
       </div>
       <form action="#" class="mx-auto mt-4 w-96 space-y-6" data-test="account_form" @submit.prevent="f_signUp">
@@ -30,6 +30,7 @@
             <label class="font-bold text--color" for="email-address">邮箱</label>
             <input
               id="email-address"
+              v-model="account.email"
               :class="{ err: is_err.email }"
               autocomplete="email"
               class="input"
@@ -44,6 +45,7 @@
             <label class="font-bold text--color" for="password">密码</label>
             <input
               id="password"
+              v-model="account.pwd"
               :class="{ err: is_err.pwd }"
               autocomplete="current-password"
               class="input"
@@ -60,6 +62,7 @@
             <div class="w-full mt-1 mb-6 flex">
               <input
                 id="code"
+                v-model="account.code"
                 class="code flex-1 bg-transparent appearance-none rounded-md border border-indigo-500 px-3 py-2 text-gray-900 focus:z-10 focus:border-indigo-800 focus:outline-none focus:ring-indigo-500 sm:text-sm;"
                 data-test="account_code"
                 name="ode"
@@ -108,8 +111,12 @@
 <script lang="ts" setup>
 import { LockClosedIcon } from "@heroicons/vue/20/solid";
 import { useRouter } from "vue-router";
-import { Ref, ref, unref } from "vue";
-import type { interf_Account } from "@/views/types/type_signIn."; //*路由
+import type { Ref } from "vue";
+import { ref, unref } from "vue";
+// @ts-ignore
+import type { interf_Account } from "@/views/types/type_signIn.";
+// @ts-ignore
+import { useAccountStore } from "@/stores/account";
 //*路由
 const router = useRouter();
 function f_router_to(to: string) {
@@ -152,7 +159,8 @@ function f_check_account(_ep: string): void {
 //*验证码
 const bt_time = ref<string | number>("发送验证码");
 function f_sendCode() {
-  bt_time.value = 6;
+  //!发送验证码
+  bt_time.value = 60;
   let timerI = setInterval(() => {
     (bt_time.value as number)--;
     if (bt_time.value == 0) {
@@ -164,8 +172,15 @@ function f_sendCode() {
     }
   }, 1000);
 }
-
-function f_signUp() {}
+function f_signUp() {
+  useAccountStore()
+    .signUp(account.value)
+    .then(() => {
+      f_router_to("signIn");
+    })
+    // @ts-ignore
+    .finally(() => {});
+}
 </script>
 
 <style lang="scss" scoped>
@@ -216,7 +231,7 @@ $--color-text: #533fb5, #463ea8, #3a3c9c, #30398e, #273681;
 
 //*sign in的颜色渐变动画
 .color--autoChange {
-  animation: colorAnim 3s linear 60s infinite alternate-reverse;
+  animation: colorAnim 3s linear 0s infinite alternate-reverse;
 }
 
 @keyframes colorAnim {

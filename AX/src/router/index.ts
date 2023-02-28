@@ -20,6 +20,11 @@ const router = createRouter({
       path: "/signUp",
       component: () => import("@/views/SignUp.vue"),
     },
+    {
+      name: "introduce",
+      path: "/introduce",
+      component: () => import("@/views/Introduce.vue"),
+    },
   ],
 });
 
@@ -28,6 +33,7 @@ export default router;
 //!
 router.beforeEach(async (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
   if (getToken()) {
+    console.log(2);
     switch (to.name) {
       case "signIn":
         next({ name: "home" });
@@ -36,7 +42,11 @@ router.beforeEach(async (to: RouteLocationNormalized, from: RouteLocationNormali
         next();
         break;
     }
-  } else {
+  }
+  // else if (to.name !== "home") {
+  //   next({ name: "home" });
+  // }
+  else {
     next();
   }
 });

@@ -102,7 +102,9 @@ import type { Ref } from "vue";
 import { ref, unref } from "vue";
 import { LockClosedIcon } from "@heroicons/vue/20/solid";
 import { useRouter } from "vue-router";
+// @ts-ignore
 import type { interf_Account } from "@/views/types/type_signIn.";
+// @ts-ignore
 import { useAccountStore } from "@/stores/account";
 
 //*test
@@ -156,13 +158,12 @@ function f_api_signIn(): void {
   useAccountStore()
     .signIn(account.value)
     .then(() => {
-      console.log(1);
       f_router_to("home");
     })
-    .catch((err) => {
-      console.log(err);
+    .catch((err: Error) => {
+      console.log(err.message);
     });
-  //test
+  //!test
   emit("test", { ...account.value });
 }
 </script>

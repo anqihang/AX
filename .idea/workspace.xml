@@ -5,32 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e17d57d-a0fc-457e-8d30-32d09ef8277b" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/AX/.env.development" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AX/public/ax32x32.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AX/public/favicon-32x32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AX/src/Api/api_sign.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AX/src/assets/ax32x32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AX/src/assets/ax32x32.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AX/src/router/guard.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AX/src/stores/account.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AX/src/utils/token.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AX/src/views/types/type_signIn..ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AX/src/components/Nav.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AX/src/stores/nav.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AX/src/views/Introduce.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AX/.env" beforeDir="false" afterPath="$PROJECT_DIR$/AX/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AX/.env.dev" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AX/.prettierrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/AX/.prettierrc.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AX/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/AX/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AX/src/Api/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/AX/src/Api/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AX/src/Api/interceptors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/AX/src/Api/interceptors.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AX/src/Api/sign.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AX/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/AX/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AX/public/ax32x32.ico" beforeDir="false" afterPath="$PROJECT_DIR$/AX/public/ax32.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AX/src/Api/api_sign.ts" beforeDir="false" afterPath="$PROJECT_DIR$/AX/src/Api/api_sign.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AX/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/AX/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AX/src/assets/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/AX/src/assets/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AX/src/router/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/AX/src/router/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AX/src/stores/account.ts" beforeDir="false" afterPath="$PROJECT_DIR$/AX/src/stores/account.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AX/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/AX/src/views/Home.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AX/src/views/SignIn.vue" beforeDir="false" afterPath="$PROJECT_DIR$/AX/src/views/SignIn.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AX/src/views/SignUp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/AX/src/views/SignUp.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AX/src/views/__tests__/sign.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/AX/src/views/__tests__/sign.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AX/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/AX/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,23 +32,23 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Vue Single File Component" />
         <option value="TypeScript File" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "history": [
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
     {
-      "state": "OPEN",
-      "author": "anqihang"
+      &quot;state&quot;: &quot;OPEN&quot;,
+      &quot;author&quot;: &quot;anqihang&quot;
     }
   ],
-  "lastFilter": {
-    "state": "OPEN",
-    "author": "anqihang"
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;author&quot;: &quot;anqihang&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -75,7 +64,7 @@
     <option name="myRunOnSave" value="true" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2LuaZhh2Cazytmrqan25Q7aZAiW" />
   <component name="ProjectLevelVcsManager">
@@ -103,7 +92,7 @@
     "nodejs_package_manager_path": "npm",
     "prettierjs.PrettierConfiguration.Package": "D:\\AX\\AX\\node_modules\\prettier",
     "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.语言默认值",
     "ts.external.directory.path": "D:\\AX\\AX\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -113,9 +102,9 @@
       <recent name="D:\AX\AX\src\assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\AX\AX\public" />
       <recent name="D:\AX\AX\src\router" />
       <recent name="D:\AX\AX\src" />
-      <recent name="D:\AX\AX\public" />
     </key>
   </component>
   <component name="RunManager" selected="Vitest.signIn Component.test account signIn">
@@ -189,6 +178,7 @@
       <workItem from="1677301166997" duration="17498000" />
       <workItem from="1677396155356" duration="22273000" />
       <workItem from="1677479784644" duration="17897000" />
+      <workItem from="1677582178292" duration="12294000" />
     </task>
     <servers />
   </component>
