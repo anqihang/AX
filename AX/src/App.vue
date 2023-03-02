@@ -6,31 +6,15 @@ provide(pi_name, "ax");
 </script>
 <template>
   <RouterView v-slot="{ Component }">
-    <!--    *为了过渡时不显示白色背景-->
-    <!--    <div-->
-    <!--      class="isolate bg-white min-h-screen"-->
-    <!--      style="-->
-    <!--        background-image: linear-gradient(-->
-    <!--          to left top,-->
-    <!--          #6922c9,-->
-    <!--          #5b40d0,-->
-    <!--          #5055d3,-->
-    <!--          #4c65d3,-->
-    <!--          #5074d0,-->
-    <!--          #4284d7,-->
-    <!--          #3c92da,-->
-    <!--          #41a0dc,-->
-    <!--          #2bb3e3,-->
-    <!--          #2ac6e6,-->
-    <!--          #43d7e4,-->
-    <!--          #66e7e0-->
-    <!--        );-->
-    <!--      "-->
-    <!--    >-->
-    <transition mode="out-in" name="fade">
-      <component :is="Component"></component>
-    </transition>
-    <!--    </div>-->
+    <!--    *为了过渡时不显示白色背景,只在Home,SignIn,SignUp之间跳转时显示紫色渐变背景-->
+    <div
+      :class="{ 'bgi-linear-bp': ['Home', 'SignIn', 'SignUp'].includes(Component?.type.__name) }"
+      class="isolate min-h-screen flex"
+    >
+      <transition mode="out-in" name="fade">
+        <component :is="Component" class="w-full">{{ Component?.type.__name }}</component>
+      </transition>
+    </div>
   </RouterView>
 </template>
 <style lang="scss" scoped></style>

@@ -1,33 +1,19 @@
 <template>
-  <div
-    class="w-full h-screen flex items-center"
-    style="
-      background-image: linear-gradient(
-        to left top,
-        #6922c9,
-        #5b40d0,
-        #5055d3,
-        #4c65d3,
-        #5074d0,
-        #4284d7,
-        #3c92da,
-        #41a0dc,
-        #2bb3e3,
-        #2ac6e6,
-        #43d7e4,
-        #66e7e0
-      );
-    "
-  >
-    <div class="max-w-4xl mx-auto">
+  <div class="w-full min-h-screen flex items-center bgi-linear-bp">
+    <div class="w-full max-w-md mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div>
-        <img alt="logo" class="border--hover h-12 mx-auto w-auto cursor-pointer" src="@/assets/ax.svg" @click="f_router_to('home')" />
-        <h2 class="text--color mt-6 text-center text-3xl font-bold tracking-tight leading-10">注 册</h2>
+        <img
+          alt="logo"
+          class="border--hover h-12 mx-auto w-auto cursor-pointer"
+          src="@/assets/ax.svg"
+          @click="f_router_to('home')"
+        />
+        <h2 class="text--color-p mt-6 text-center text-3xl font-bold tracking-tight leading-10">注 册</h2>
       </div>
-      <form action="#" class="mx-auto mt-4 w-96 space-y-6" data-test="account_form" @submit.prevent="f_signUp">
+      <form action="#" class="mx-auto mt-4 space-y-6" data-test="account_form" @submit.prevent="f_signUp">
         <div>
           <div>
-            <label class="font-bold text--color" for="email-address">邮箱</label>
+            <label class="font-bold text--color-p" for="email-address">邮箱</label>
             <input
               id="email-address"
               v-model="account.email"
@@ -42,7 +28,7 @@
             />
           </div>
           <div>
-            <label class="font-bold text--color" for="password">密码</label>
+            <label class="font-bold text--color-p" for="password">密码</label>
             <input
               id="password"
               v-model="account.pwd"
@@ -58,7 +44,7 @@
             />
           </div>
           <div>
-            <label class="font-bold text--color" for="password">验证码</label>
+            <label class="font-bold text--color-p" for="password">验证码</label>
             <div class="w-full mt-1 mb-6 flex">
               <input
                 id="code"
@@ -71,7 +57,7 @@
               />
               <button
                 :style="{ width: Number.isInteger(bt_time) ? (bt_time !== 0 ? '4rem' : '10rem') : '10rem' }"
-                class="code w-40 text--color py-2 border border-indigo-600 rounded-md px-3 ml-4 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-blue-500"
+                class="code w-40 text--color-p py-2 border border-indigo-600 rounded-md px-3 ml-4 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-blue-500"
                 type="button"
                 @click="f_sendCode"
               >
@@ -83,11 +69,16 @@
 
         <div class="flex justify-between items-center">
           <div class="flex items-center">
-            <p class="ml-2 block text-sm text-gray-900 text--color">已有账号</p>
+            <p class="ml-2 block text-sm text-gray-900 text--color-p">已有账号</p>
           </div>
 
           <div class="text-sm">
-            <a class="color--autoChange border--hover font-medium text--color py-2" href="#" @click="f_router_to('signIn')">登录</a>
+            <a
+              class="color--autoChange border--hover font-medium text--color-p py-2"
+              href="#"
+              @click="f_router_to('signIn')"
+              >登 录</a
+            >
           </div>
         </div>
 
@@ -114,7 +105,7 @@ import { useRouter } from "vue-router";
 import type { Ref } from "vue";
 import { ref, unref } from "vue";
 // @ts-ignore
-import type { interf_Account } from "@/views/types/type_signIn.";
+import type { interf_Account } from "@/views/types/type_sign";
 // @ts-ignore
 import { useAccountStore } from "@/stores/account";
 //*路由
@@ -200,12 +191,12 @@ $--color-text: #533fb5, #463ea8, #3a3c9c, #30398e, #273681;
   @apply mt-1 mb-6 bg-transparent relative block w-full appearance-none rounded-md border border-indigo-500 px-3 py-2
   text-gray-900 focus:z-10 focus:border-indigo-800 focus:outline-none focus:ring-indigo-500 sm:text-sm;
 }
-/*文本颜色-渐变*/
-.text--color {
-  color: transparent;
-  -webkit-background-clip: text;
-  background-image: linear-gradient(to right, $--color-text);
-}
+///*文本颜色-渐变*/
+//.text--color {
+//  color: transparent;
+//  -webkit-background-clip: text;
+//  background-image: linear-gradient(to right, $--color-text);
+//}
 
 //*input的自动填充背景透明
 .input:-webkit-autofill {

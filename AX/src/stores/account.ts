@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import type { interf_Account } from "@/views/types/type_signIn.";
+import type { interf_Account } from "@/views/types/type_sign";
 import { axios_signIn, axios_signUp } from "@/Api/api_sign";
 import { getToken, removeToken, setToken } from "@/utils/token";
 import { ref } from "vue";

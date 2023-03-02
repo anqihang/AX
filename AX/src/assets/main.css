@@ -11,6 +11,36 @@
 h1,h2,h3,h4,h5,h6,p,a,label{
     user-select: none;
 }
+/**
+ * 最大宽度
+ */
+.ax-w-max-2560{
+    max-width: 2560px;
+}
+/* *背景-蓝紫*/
+.bgi-linear-bp{
+    background-image: linear-gradient(
+            to left top,
+            #6922c9,
+            #5b40d0,
+            #5055d3,
+            #4c65d3,
+            #5074d0,
+            #4284d7,
+            #3c92da,
+            #41a0dc,
+            #2bb3e3,
+            #2ac6e6,
+            #43d7e4,
+            #66e7e0
+    );
+}
+/* *字体渐变*/
+.text--color-p {
+  color: transparent;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to right, #533fb5, #463ea8, #3a3c9c, #30398e, #273681);
+}
 /** vue
  * 淡入淡出 fade
  */

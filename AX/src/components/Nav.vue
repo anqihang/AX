@@ -1,27 +1,32 @@
 <template>
-  <div class="px-6 pt-6 lg:px-8">
+  <div :class="{ leaveTop: !isTop }" class="px-6 pt-6 lg:px-8 sticky top-0 z-10 transition-all duration-500 delay-0">
     <nav aria-label="Global" class="flex items-center justify-between">
       <!--      *logo-->
       <div class="flex lg:flex-1">
-        <a class="-m-1.5 p-1.5" href="#">
-          <span class="sr-only">Your Company</span>
-          <img alt="" class="h-8" src="@/assets/ax.svg" />
+        <a href="javascript:void(0)" @click="f_router_to('home')">
+          <span class="sr-only">AX</span>
+          <img alt="logo" class="h-8" src="@/assets/ax.svg" />
         </a>
       </div>
       <!--  !md设置 三-->
       <div class="flex lg:hidden">
-        <button class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" type="button" @click="mobileMenuOpen = true">
+        <button
+          class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+          type="button"
+          @click="mobileMenuOpen = true"
+        >
           <span class="sr-only">Open main menu</span>
           <Bars3Icon aria-hidden="true" class="h-6 w-6" />
         </button>
       </div>
       <!--        !-->
-      <!--      *中间选项-->
+      <!--      *中间选项 navigation从store中获取值-->
       <div class="hidden lg:flex lg:gap-x-12">
         <a
           v-for="item in navigation"
           :key="item.name"
-          class="text-sm font-semibold leading-6 text--color"
+          :class="{ 'ax-active-a': $route.name === item.href }"
+          class="text-sm font-semibold leading-6 text--color-p"
           href="javascript:void(0)"
           @click="f_router_to(item.href)"
         >
@@ -31,7 +36,11 @@
       <!--      *登陆注册-->
       <Transition mode="out-in" name="fade">
         <div v-if="!is_signIn" class="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a class="text--color text-sm font-semibold leading-6 text-gray-900" href="javascript:void(0);" @click="f_router_to('signUp')">
+          <a
+            class="text--color-p text-sm font-semibold leading-6 text-gray-900"
+            href="javascript:void(0);"
+            @click="f_router_to('signUp')"
+          >
             注 册
             <!--            <span aria-hidden="true">&rarr;</span>-->
           </a>
@@ -69,13 +78,17 @@
             >
               <MenuItems
                 class="z-10 absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-                style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); box-shadow: 0 0 12px 1px rgba(255, 255, 255, 0.1)"
+                style="
+                  background-color: rgba(255, 255, 255, 0.1);
+                  backdrop-filter: blur(10px);
+                  box-shadow: 0 0 12px 1px rgba(255, 255, 255, 0.1);
+                "
               >
                 <div class="px-1 py-1">
                   <MenuItem v-slot="{ active }">
                     <button
                       :class="[
-                        active ? 'bg-violet-500 text-white' : 'text--color text-gray-900',
+                        active ? 'bg-violet-500 text-white' : 'text--color-p text-gray-900',
                         ' group flex w-full items-center rounded-md px-2 py-2 text-sm',
                       ]"
                     >
@@ -86,7 +99,7 @@
                   <MenuItem v-slot="{ active }">
                     <button
                       :class="[
-                        active ? 'bg-violet-500 text-white' : 'text--color text-gray-900',
+                        active ? 'bg-violet-500 text-white' : 'text--color-p text-gray-900',
                         ' group flex w-full items-center rounded-md px-2 py-2 text-sm',
                       ]"
                     >
@@ -99,12 +112,16 @@
                   <MenuItem v-slot="{ active }">
                     <button
                       :class="[
-                        active ? 'bg-violet-500 text-white' : 'text--color text-gray-900',
+                        active ? 'bg-violet-500 text-white' : 'text--color-p text-gray-900',
                         ' group flex w-full items-center rounded-md px-2 py-2 text-sm',
                       ]"
                       @click="f_signOut"
                     >
-                      <ArrowLeftOnRectangleIcon :active="active" aria-hidden="true" class="mr-2 h-5 w-5 text-violet-700" />
+                      <ArrowLeftOnRectangleIcon
+                        :active="active"
+                        aria-hidden="true"
+                        class="mr-2 h-5 w-5 text-violet-700"
+                      />
                       注销
                     </button>
                   </MenuItem>
@@ -135,7 +152,7 @@
                 v-for="item in navigation"
                 :key="item.name"
                 :href="item.href"
-                class="text--color mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10"
+                class="text--color-p mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10"
               >
                 {{ item.name }}
               </a>
@@ -143,7 +160,7 @@
             <div class="py-6">
               <a
                 v-if="!is_signIn"
-                class="cursor-pointer text--color -mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-6 text-gray-900 hover:bg-gray-400/10"
+                class="cursor-pointer text--color-p -mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-6 text-gray-900 hover:bg-gray-400/10"
                 @cliick="f_router_to('signIn')"
               >
                 登 录
@@ -169,17 +186,26 @@
 
 <script lang="ts" setup>
 import { Dialog, DialogPanel, Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/vue";
-import { ArrowLeftOnRectangleIcon, Bars3Icon, Cog6ToothIcon, PencilSquareIcon, XMarkIcon } from "@heroicons/vue/24/outline";
+import {
+  ArrowLeftOnRectangleIcon,
+  Bars3Icon,
+  Cog6ToothIcon,
+  PencilSquareIcon,
+  XMarkIcon,
+} from "@heroicons/vue/24/outline";
 import { useAccountStore } from "@/stores/account";
 import { storeToRefs } from "pinia";
 import { ref } from "vue";
 import { useNavStore } from "@/stores/nav";
-import { useRouter } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 
 //*l路由
 const router = useRouter();
+const route = useRoute();
 function f_router_to(to: string): void {
-  router.push({ name: to });
+  if (route.name !== to) {
+    router.push({ name: to });
+  }
 }
 //*store
 const { token } = storeToRefs(useAccountStore());
@@ -194,6 +220,11 @@ const is_signIn = token;
 function f_signOut(): void {
   useAccountStore().signOut();
 }
+//*滚动时改变nav的高度
+const isTop = ref(true);
+window.addEventListener("scroll", () => {
+  window.scrollY > 0 ? (isTop.value = false) : (isTop.value = true);
+});
 </script>
 
 <style lang="scss" scoped>
@@ -201,10 +232,13 @@ a {
   transition: border 0.5s ease 0s;
   @apply px-2 rounded-md border border-transparent hover:border-blue-600;
 }
-//*字体渐变
-.text--color {
-  color: transparent;
-  -webkit-background-clip: text;
-  background-image: linear-gradient(to right, #533fb5, #463ea8, #3a3c9c, #30398e, #273681);
+.ax-active-a {
+  @apply ring ring-2 ring-offset-2 ring-indigo-600;
 }
+////*字体渐变
+//.text--color {
+//  color: transparent;
+//  -webkit-background-clip: text;
+//  background-image: linear-gradient(to right, #533fb5, #463ea8, #3a3c9c, #30398e, #273681);
+//}
 </style>

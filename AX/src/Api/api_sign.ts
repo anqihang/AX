@@ -1,5 +1,5 @@
 import { instance } from "./index";
-import type { interf_Account } from "@/views/types/type_signIn.";
+import type { interf_Account } from "@/views/types/type_sign";
 import type { AxiosPromise } from "axios";
 //登录
 export const axios_signIn = function (account: Partial<interf_Account>): AxiosPromise {

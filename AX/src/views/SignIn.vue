@@ -1,36 +1,28 @@
 <template>
-  <div
-    class="w-full h-screen flex items-center"
-    style="
-      background-image: linear-gradient(
-        to left top,
-        #6922c9,
-        #5b40d0,
-        #5055d3,
-        #4c65d3,
-        #5074d0,
-        #4284d7,
-        #3c92da,
-        #41a0dc,
-        #2bb3e3,
-        #2ac6e6,
-        #43d7e4,
-        #66e7e0
-      );
-    "
-  >
-    <div class="max-w-4xl mx-auto">
+  <div class="w-full min-h-screen flex items-center bgi-linear-bp">
+    <div class="w-full max-w-md mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div>
-        <img alt="logo" class="border--hover h-12 mx-auto w-auto cursor-pointer" src="@/assets/ax.svg" @click="f_router_to('home')" />
-        <h2 class="text--color mt-6 text-center text-3xl font-bold tracking-tight leading-10">Sign in to your account</h2>
-        <p class="border--hover cursor-pointer color--autoChange text-center mt-4" style="color: #4f46e5" @click="f_router_to('signUp')">
+        <img
+          alt="logo"
+          class="border--hover h-12 mx-auto w-auto cursor-pointer"
+          src="@/assets/ax.svg"
+          @click="f_router_to('home')"
+        />
+        <h2 class="text--color-p mt-6 text-center text-3xl font-bold tracking-tight leading-10">
+          Sign in to your account
+        </h2>
+        <p
+          class="border--hover cursor-pointer color--autoChange text-center mt-4"
+          style="color: #4f46e5"
+          @click="f_router_to('signUp')"
+        >
           Or sign up
         </p>
       </div>
-      <form action="#" class="mx-auto mt-4 w-96 space-y-6" data-test="account_form" @submit.prevent="f_api_signIn">
+      <form action="#" class="mx-auto mt-4 space-y-6" data-test="account_form" @submit.prevent="f_api_signIn">
         <div>
           <div>
-            <label class="font-bold text--color" for="email-address">Email address</label>
+            <label class="font-bold text--color-p" for="email-address">Email address</label>
             <input
               id="email-address"
               v-model="account.email"
@@ -45,7 +37,7 @@
             />
           </div>
           <div>
-            <label class="font-bold text--color" for="password">Password</label>
+            <label class="font-bold text--color-p" for="password">Password</label>
             <input
               id="password"
               v-model="account.pwd"
@@ -72,11 +64,15 @@
               name="remember-me"
               type="checkbox"
             />
-            <label class="ml-2 block text-sm text-gray-900 cursor-pointer text--color" for="remember-me"> Remember me </label>
+            <label class="ml-2 block text-sm text-gray-900 cursor-pointer text--color-p" for="remember-me">
+              Remember me
+            </label>
           </div>
 
-          <div class="text-sm">
-            <a class="font-medium text--color hover:!text-indigo-500" href="#">Forgot your password?</a>
+          <div class="text-sm ml-2 border--hover">
+            <a class="w-full font-medium hover:!text-indigo-500" href="#">
+              <p class="break-all text--color-p" style="hyphens: manual">Forgot your password?</p>
+            </a>
           </div>
         </div>
 
@@ -103,13 +99,13 @@ import { ref, unref } from "vue";
 import { LockClosedIcon } from "@heroicons/vue/20/solid";
 import { useRouter } from "vue-router";
 // @ts-ignore
-import type { interf_Account } from "@/views/types/type_signIn.";
+import type { interf_Account } from "@/views/types/type_sign";
 // @ts-ignore
 import { useAccountStore } from "@/stores/account";
 
-//*test
+// *test
 const emit = defineEmits<{ (e: "test", value: object): void }>();
-//*路由
+// *路由
 const router = useRouter();
 function f_router_to(to: string) {
   router.push({ name: to });
@@ -202,12 +198,12 @@ $--color-text: #533fb5, #463ea8, #3a3c9c, #30398e, #273681;
   font-size: 12px;
 }
 
-/*文本颜色-渐变*/
-.text--color {
-  color: transparent;
-  -webkit-background-clip: text;
-  background-image: linear-gradient(to right, $--color-text);
-}
+///*文本颜色-渐变*/
+//.text--color {
+//  color: transparent;
+//  -webkit-background-clip: text;
+//  background-image: linear-gradient(to right, $--color-text);
+//}
 
 .border--hover {
   @apply px-2 rounded-md border border-transparent hover:border-blue-600;

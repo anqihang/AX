@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
-import SignIn from "../SignIn.vue";
 import { mount } from "@vue/test-utils";
+import SignIn from "../SignIn.vue";
+import SignUp from "@/views/SignUp.vue";
 
 describe("signIn Component", () => {
   it("test account signIn", async () => {
@@ -30,5 +31,10 @@ describe("signIn Component", () => {
         rememberMe: true,
       },
     ]);
+  });
+});
+describe("signUp Component", () => {
+  it("test account signUp", async () => {
+    const wrapper = mount(SignUp);
   });
 });
