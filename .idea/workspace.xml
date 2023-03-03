@@ -4,29 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e17d57d-a0fc-457e-8d30-32d09ef8277b" name="变更" comment="2022.2.28-23.43-signUp is over,begin Introduce">
-      <change afterPath="$PROJECT_DIR$/AX/public/maonuo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AX/src/components/Card3D.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AX/src/views/Communication.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AX/src/views/Introduction.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AX/src/views/Tool.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="7e17d57d-a0fc-457e-8d30-32d09ef8277b" name="变更" comment="2022.3.2-23.23-card3d is over">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AX/.prettierrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/AX/.prettierrc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AX/src/Api/api_sign.ts" beforeDir="false" afterPath="$PROJECT_DIR$/AX/src/Api/api_sign.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AX/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/AX/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AX/src/assets/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/AX/src/assets/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AX/src/components/Nav.vue" beforeDir="false" afterPath="$PROJECT_DIR$/AX/src/components/Nav.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AX/src/router/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/AX/src/router/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AX/src/stores/account.ts" beforeDir="false" afterPath="$PROJECT_DIR$/AX/src/stores/account.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AX/src/stores/nav.ts" beforeDir="false" afterPath="$PROJECT_DIR$/AX/src/stores/nav.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AX/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/AX/src/views/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AX/src/views/Introduce.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AX/src/views/SignIn.vue" beforeDir="false" afterPath="$PROJECT_DIR$/AX/src/views/SignIn.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AX/src/views/SignUp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/AX/src/views/SignUp.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AX/src/views/__tests__/sign.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/AX/src/views/__tests__/sign.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AX/src/views/types/type_signIn..ts" beforeDir="false" afterPath="$PROJECT_DIR$/AX/src/views/types/type_sign.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AX/src/views/Communication.vue" beforeDir="false" afterPath="$PROJECT_DIR$/AX/src/views/Communication.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo.json" beforeDir="false" afterPath="$PROJECT_DIR$/demo.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,30 +65,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/AX/AX/src/assets&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;D:\\AX\\AX\\node_modules\\prettier&quot;,
-    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\AX\\AX\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/AX/AX/src/assets",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.stylelint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "D:\\AX\\AX\\node_modules\\prettier",
+    "rearrange.code.on.save": "true",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "settings.sync",
+    "ts.external.directory.path": "D:\\AX\\AX\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\AX\AX\src\assets" />
@@ -195,6 +176,8 @@
       <workItem from="1677734814658" duration="1231000" />
       <workItem from="1677736081423" duration="99000" />
       <workItem from="1677736220203" duration="27672000" />
+      <workItem from="1677770580157" duration="106000" />
+      <workItem from="1677823273963" duration="9221000" />
     </task>
     <task id="LOCAL-00001" summary="2022.2.28-23.43-signUp is over,begin Introduce">
       <created>1677599046781</created>
@@ -203,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677599046781</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="2022.3.2-23.23-card3d is over">
+      <created>1677770660991</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1677770660991</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,6 +213,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="2022.2.28-23.43-signUp is over,begin Introduce" />
-    <option name="LAST_COMMIT_MESSAGE" value="2022.2.28-23.43-signUp is over,begin Introduce" />
+    <MESSAGE value="2022.3.2-23.23-card3d is over" />
+    <option name="LAST_COMMIT_MESSAGE" value="2022.3.2-23.23-card3d is over" />
   </component>
 </project>
